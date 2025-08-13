@@ -1,0 +1,121 @@
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    background: #1E90FF;
+    padding: 18px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #fff;
+    margin-right: 40px;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    background: #fff;
+    color: #1E90FF;
+}
+/* Contact Page Styles */
+.contact-hero {
+    background: url('images/ChatGPT\ Image\ Aug\ 13\,\ 2025\,\ 04_15_12\ PM.png') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.info-card {
+    flex: 1 1 250px;
+    background: #efecec;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.info-card:hover {
+    transform: translateY(-5px);
+}
+.info-card i {
+    font-size: 2rem;
+    color: #1E90FF;
+    margin-bottom: 10px;
+}
+
+.contact-form-section {
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.contact-form .form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: none;
+    font-size: 1rem;
+}
+.contact-form label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    color: #777;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+.contact-form input:focus + label,
+.contact-form textarea:focus + label,
+.contact-form input:valid + label,
+.contact-form textarea:valid + label {
+    top: -8px;
+    left: 8px;
+    font-size: 0.8rem;
+    color: #1E90FF;
+    background: #fff;
+    padding: 0 4px;
+}
+.map-section iframe {
+    border-radius: 12px;
+}

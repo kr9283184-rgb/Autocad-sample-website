@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shop • House Models Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="Product.css">
+</head>
+<body>
+  <!-- Navbar (reuse your header or include same navbar code) -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">🏠 HouseModels</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="products.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="product-hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>2D & 3D AutoCAD Designs</h1>
+        <p>Shop production-ready AutoCAD 2D plans and optimized 3D models for architecture and visualization.</p>
+      </div>
+      <div class="hero-actions">
+        <input id="searchInput" type="search" placeholder="Search models, keywords..." aria-label="search">
+        <select id="sortSelect" aria-label="Sort">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+          <option value="newest">Newest</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="product-filters container">
+    <div class="filters-row">
+      <div class="filter-buttons">
+        <button data-filter="all" class="filter-btn active">All</button>
+        <button data-filter="2d" class="filter-btn">2D Plans</button>
+        <button data-filter="3d" class="filter-btn">3D Models</button>
+        <button data-filter="bundle" class="filter-btn">Bundles</button>
+      </div>
+      <div class="tag-filters">
+        <label><input type="checkbox" data-tag="interior"> Interior</label>
+        <label><input type="checkbox" data-tag="exterior"> Exterior</label>
+        <label><input type="checkbox" data-tag="residential"> Residential</label>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Grid -->
+  <section id="products" class="product-grid container">
+    <!-- JS will render product cards here -->
+  </section>
+
+  <!-- Quick View Modal -->
+  <div id="productModal" class="product-modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <img id="modalImage" src="" alt="product preview">
+        </div>
+        <div class="modal-info">
+          <h2 id="modalTitle">Product title</h2>
+          <p id="modalTags" class="muted"></p>
+          <p id="modalDesc">Long description</p>
+          <div class="price-row">
+            <span id="modalPrice" class="price">$0</span>
+            <button id="buyNow" class="btn">Buy Now</button>
+          </div>
+          <ul id="modalMeta" class="meta-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer (reuse your footer) -->
+  <footer>
+    <div class="footer-content container">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul><li><a href="index.html">Home</a></li><li><a href="products.html">Shop</a></li></ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>support@housemodels.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="products-data.js"></script> <!-- optional: if you want to move product list to separate file -->
+  <script>
+    /* Product page behavior handled in script.js additions below */
+  </script>
+</body>
+</html>

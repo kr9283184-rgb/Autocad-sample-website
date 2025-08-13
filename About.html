@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us • House Models Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Page-specific, minimal styles + animations (kept inline to avoid editing your main CSS) -->
+  <style>
+    :root { --accent: #1E90FF; }
+
+    /* Shared spacing wrapper */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* Hero */
+    .about-hero { 
+      position: relative; height: 70vh; min-height: 420px;
+      background: url('images/ChatGPT\ Image\ Aug\ 13\,\ 2025\,\ 05_00_28\ PM.png') center/cover no-repeat, 
+                  linear-gradient(180deg, #070707 0%, #010000 100%);
+      display: grid; place-items: center; text-align: center; overflow: hidden;
+      margin-top: 70px; /* account for fixed navbar */
+    }
+    .about-hero::after{
+      content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.35), rgba(0,0,0,.1));
+    }
+    .about-hero .inner{ position: relative; z-index: 1; color: #110b0b; }
+    .about-hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 .5rem; letter-spacing: .5px; }
+    .about-hero p { font-size: clamp(1rem, 2vw, 1.2rem); opacity: .95; }
+
+    /* Sections */
+    section.about, section.mission, section.team, section.cta { padding: 4rem 0; }
+    section.about .grid { display:grid; gap:2rem; grid-template-columns: 1.2fr 1fr; align-items: center; }
+    section.about img { width:100%; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+    section.about h2 { margin:0 0 .5rem; }
+    section.about p.lead { font-size:1.05rem; opacity:.85; }
+
+    /* Cards */
+    .cards { display:grid; gap:1.25rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .card { background:#fff; border:1px solid #eee; border-radius:16px; padding:1.25rem 1.25rem 1.5rem; transition: transform .35s ease, box-shadow .35s ease; }
+    .card:hover { transform: translateY(-6px); box-shadow:0 12px 24px rgba(0,0,0,.08); }
+    .card .icon { font-size:1.8rem; color:var(--accent); margin-bottom:.5rem; }
+    .card h3 { margin:.25rem 0 .5rem; }
+    .kv { display:flex; gap:1rem; align-items:center; }
+
+    /* Team */
+    .team-grid { display:grid; gap:1.25rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+    .member { text-align:center; padding:1.25rem; background:#fff; border:1px solid #eee; border-radius:16px; transition: transform .35s ease, box-shadow .35s ease; }
+    .member:hover { transform: translateY(-6px); box-shadow:0 12px 24px rgba(0,0,0,.08); }
+    .avatar { width:96px; height:96px; border-radius:50%; object-fit:cover; margin:0 auto .75rem; box-shadow:0 8px 18px rgba(0,0,0,.08); }
+    .role { font-size:.9rem; opacity:.7; }
+    .social a { margin: 0 .35rem; color: var(--accent); font-size: 1.05rem; }
+
+    /* CTA */
+    .cta .panel { background: linear-gradient(135deg, var(--accent), #0f6cd1); border-radius:20px; color:#fff; padding:2rem; text-align:center; }
+    .cta .btn-light { background:#fff; color:#0f6cd1; border:none; border-radius:12px; padding:.8rem 1.2rem; font-weight:600; cursor:pointer; }
+    .cta .btn-light:hover { filter: brightness(.95); }
+
+    /* Reveal animations */
+    .reveal { opacity: 0; transform: translateY(24px); }
+    .reveal.in-view { opacity:1; transform: translateY(0); transition: opacity .7s ease, transform .7s ease; }
+
+    /* Float animation for small accents */
+    @keyframes floaty { 0%{ transform:translateY(0);} 50%{ transform:translateY(-6px);} 100%{ transform:translateY(0);} }
+    .floaty { animation: floaty 4s ease-in-out infinite; }
+
+    @media (max-width: 900px){
+      section.about .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar (same structure as index) -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">🏠 HouseModels</div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#shop">Shop</a></li>
+        <li><a href="index.html#categories">Categories</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="about-hero">
+    <div class="inner">
+      <h1 class="reveal" style="transition-delay:.1s">We design and curate architectural assets</h1>
+      <p class="reveal" style="transition-delay:.3s">Prebuilt 2D & 3D house models and professional AutoCAD plans to speed up your workflow.</p>
+    </div>
+  </section>
+
+  <!-- About copy -->
+  <section class="about">
+    <div class="container">
+      <div class="grid">
+        <div class="reveal">
+          <h2>Our Story</h2>
+          <p class="lead">Founded by architects and visualization artists, HouseModels was built to remove the busywork from concept to presentation. Our library blends <strong>constructability</strong> with <strong>visual polish</strong> so you can hit deadlines without compromising quality.</p>
+          <div class="cards" style="margin-top:1rem">
+            <div class="card kv"><i class="fa-solid fa-cubes icon"></i><div><strong>800+</strong><br/>Optimized assets</div></div>
+            <div class="card kv"><i class="fa-solid fa-bolt icon"></i><div><strong>10x faster</strong><br/>from brief to render</div></div>
+            <div class="card kv"><i class="fa-solid fa-shield-halved icon"></i><div><strong>Licensed</strong><br/>for commercial use</div></div>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay:.15s">
+          <img src="images/ChatGPT Image Aug 13, 2025, 04_49_53 PM.png" alt="Studio preview" class="floaty" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="mission" style="background:#0a0a0a">
+    <div class="container">
+      <h2 class="reveal" style="text-align:center; margin-top:0">Mission & Vision</h2>
+      <p class="reveal" style="text-align:center; max-width:720px; margin: .25rem auto 1.5rem; opacity:.85">We focus on speed, realism, and documentation quality—so you can focus on design.</p>
+      <div class="cards">
+        <div class="card reveal">
+          <i class="fa-solid fa-rocket icon"></i>
+          <h3>Our Mission</h3>
+          <p>Deliver production‑ready models and plans that cut iteration time while meeting professional standards for BIM/CAD handover.</p>
+        </div>
+        <div class="card reveal" style="transition-delay:.1s">
+          <i class="fa-solid fa-eye icon"></i>
+          <h3>Our Vision</h3>
+          <p>A world where architects, builders, and students share a common, high‑quality asset language from sketch to site.</p>
+        </div>
+        <div class="card reveal" style="transition-delay:.2s">
+          <i class="fa-solid fa-leaf icon"></i>
+          <h3>Sustainability</h3>
+          <p>Energy‑aware templates and material libraries help you prototype greener designs from day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="team">
+    <div class="container">
+      <h2 class="reveal" style="text-align:center; margin-top:0">Meet the Team</h2>
+      <div class="team-grid" style="margin-top:1.25rem">
+        <div class="member reveal">
+          <img class="avatar" src="images/smiling-young-male-professional-standing-with-arms-crossed-while-making-eye-contact-against-isolated-background.jpg" alt="Team member" />
+          <h3>Arjun Mehta</h3>
+          <div class="role">Lead Architect</div>
+          <p style="opacity:.8">Codes construction logic into every model to keep files practical and buildable.</p>
+          <div class="social">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="member reveal" style="transition-delay:.06s">
+          <img class="avatar" src="images/young-woman-working-laptop-isolated-white-background.jpg" alt="Team member" />
+          <h3>Priya Sharma</h3>
+          <div class="role">CAD Specialist</div>
+          <p style="opacity:.8">Maintains drafting standards and layer discipline across all AutoCAD plan sets.</p>
+          <div class="social">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="member reveal" style="transition-delay:.12s">
+          <img class="avatar" src="images/pexels-karolina-grabowska-6345317.jpg" alt="Team member" />
+          <h3>Rahul Verma</h3>
+          <div class="role">3D Artist</div>
+          <p style="opacity:.8">Optimizes topology and PBR materials for clean, fast renders in any engine.</p>
+          <div class="social">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a>
+          </div>
+        </div>
+        <div class="member reveal" style="transition-delay:.18s">
+          <img class="avatar" src="images/young-businesswoman-smiling-camera.jpg" alt="Team member" />
+          <h3>Sana Iqbal</h3>
+          <div class="role">Support & QA</div>
+          <p style="opacity:.8">Tests every download and writes quick‑start docs so you hit the ground running.</p>
+          <div class="social">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <div class="panel reveal" style="transition-delay:.05s">
+        <h2 style="margin:.25rem 0 0">Ready to build faster?</h2>
+        <p style="opacity:.9">Browse our curated 2D/3D models and AutoCAD plans.</p>
+        <a class="btn btn-light" href="index.html#shop">Go to Shop</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (reuse main styles) -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#shop">Shop</a></li>
+          <li><a href="index.html#categories">Categories</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: support@housemodels.com</p>
+        <p>Phone: +123 456 7890</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll-reveal (page-local, no external deps) -->
+  <script>
+    (function(){
+      const els = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); } });
+      }, { threshold: 0.14 });
+      els.forEach(el=> io.observe(el));
+    })();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
