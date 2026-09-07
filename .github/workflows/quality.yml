@@ -1,0 +1,41 @@
+name: Static Site Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate required files
+        run: |
+          test -s README.md
+          test -s LICENSE
+          test -s Index.html
+          test -s CONTRIBUTING.md
+          test -s SECURITY.md
+          test -s CHANGELOG.md
+      - name: Validate HTML documents
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          files = list(Path('.').glob('*.html')) + list(Path('.').glob('*.Html'))
+          assert files, 'No HTML pages found'
+          for path in files:
+              text = path.read_text(encoding='utf-8', errors='replace').lower()
+              assert '<html' in text, f'{path} does not contain an html root'
+              assert '</html>' in text, f'{path} has no closing html tag'
+          print(f'Validated {len(files)} HTML pages')
+          PY
+      - name: Validate JavaScript syntax
+        run: |
+          for file in *.js; do
+            node --check "$file"
+          done
